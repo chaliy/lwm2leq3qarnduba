@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "mlprod"
+version = "1.0.0"
+description = ""
+authors = ["Mykhailo Chalyi <mike@chaliy.name>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^1.5.3"
+scikit-learn = "^1.2.2"
+matplotlib = "^3.7.1"
+joblib = "^1.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.22.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

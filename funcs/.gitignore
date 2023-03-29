@@ -1,0 +1,13 @@
+# Local python packages
+.python_packages/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Tools
+local.settings.json
+.azure/
+.vscode/
+.venv

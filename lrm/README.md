@@ -11,7 +11,7 @@ Root Mean Squared Error: 0.96
 ## Run
 
 ```sh
-poetry run python predict.py --run
+poetry run python predict.py
 ```
 
 ## Notes

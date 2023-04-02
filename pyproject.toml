@@ -11,6 +11,9 @@ pandas = "^1.5.3"
 scikit-learn = "^1.2.2"
 matplotlib = "^3.7.1"
 joblib = "^1.2.0"
+torch = "^2.0.0"
+transformers = "^4.27.4"
+huggingface-hub = "^0.13.3"
 
 
 [tool.poetry.group.dev.dependencies]

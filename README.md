@@ -1,6 +1,7 @@
 ## Structure
 
 - `lrm` - model implemented using a linear regression
+- `bert` - fine-tuned pre-trained BERT model
 - `funcs` - Azure functions deployment
 
 ## To play with

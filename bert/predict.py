@@ -1,30 +1,22 @@
 import numpy as np
 import pandas as pd
 import torch
-from torch.utils.data import DataLoader
-from transformers import BertForSequenceClassification
-from lib.utils import evaluate, get_device
-from lib.dataset import CommonLitDataset
 
- # Set up
-device = get_device()
+from datasets import Dataset
 
-batch_size = 16
-max_length = 128
+from lib.trainer import create_trainer, get_tokenizer
+from lib.tokenization import tokenize_commonlitreadabilityprize_dataset
 
-model = BertForSequenceClassification.from_pretrained('./fine_tuned_bert')
+tokenizer = get_tokenizer('./fine_tuned_bert')
 
 eval_df = pd.read_csv('../data/test.csv')
+dataset = tokenize_commonlitreadabilityprize_dataset(Dataset.from_pandas(eval_df), tokenizer)
 
-eval_dataset = CommonLitDataset(
-    max_length,
-    eval_df['excerpt'].values)
+trainer = create_trainer('./fine_tuned_bert')
 
-eval_dataloader = DataLoader(eval_dataset, batch_size=batch_size)
-
-predictions = evaluate(model, eval_dataloader, device)
+predictions, labels, metrics = trainer.predict(dataset)
 
 print(pd.DataFrame({
     'id': eval_df['id'],
-    'target': predictions
+    'target': predictions.flatten(),
 }))

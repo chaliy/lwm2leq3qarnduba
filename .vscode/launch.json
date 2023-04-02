@@ -2,6 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File in Bert",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/bert/",
+            "justMyCode": true
+        },
+        {
             "name": "Attach to Python Functions",
             "type": "python",
             "request": "attach",
